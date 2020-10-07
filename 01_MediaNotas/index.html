@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notas</title>
+</head>
+
+<body>
+
+    <form id="formnotas">
+        <input type="text" name="notaum" id="notaum" required>
+        <input type="text" name="notadois" id="notadois" required>
+        <button type="submit" id="btnCalcular" class="btn">Calcular</button>
+    </form>
+
+    <script>
+
+        // var - Armazena dados que podem ser alterados em uma variavel - não recomendado
+        // let - Armazena dados que podem ser alterados em uma variavel -  recomendado
+        // const - Armazena dados que não podem ser alterados em uma variavel - recomendado
+
+        //Pega o elemento notaum no documento com getElementById
+        let notaum = document.getElementById('notaum');
+
+        //Exibe no console as informações do elemento
+        console.log(notaum);
+
+        //Pega o elemento do documento com querySelector pelo ID = '#notadois'
+        let notadois = document.querySelector('#notadois');
+
+        //Exibe no console as informações do elemento
+        console.log(notadois);
+
+        //Pega o elemento do documento com querySelector pela class = '.btn'
+        let btn = document.querySelector('.btn');
+
+        //Exibe no console as informações do elemento
+        console.log(btn);
+
+        //Add um evento de click ao botão
+        btn.addEventListener('click', function(event){
+            
+            //Para debugar o código
+            debugger;
+
+            //Previne para que não seja enviado a informação do submit recarregando a página
+            event.preventDefault();
+
+            //Mostra o calculo no console
+            console.log((parseFloat(notaum.value) + parseFloat(notadois.value)) / 2);
+
+        })     
+        
+
+
+
+     
+    </script>
+
+</body>
+
+</html>
