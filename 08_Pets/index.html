@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Exercícios</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<script>
+
+	let pets = [{
+            nome: "Doguinho A",
+            idade: 4,
+            tipoPet: "cachorro"
+        }, {
+            nome: "Doguinho B",
+            idade: 5,
+            tipoPet: "cachorro"
+        }, {
+            nome: "Doguinho C",
+            idade: 11,
+            tipoPet: "cachorro"
+        }, {
+            nome: "Gatinho A",
+            idade: 17,
+            tipoPet: "gato"
+        }, {
+            nome: "Gatinho H",
+            idade: 2,
+            tipoPet: "gato"
+        }, {
+            nome: "Passarinho A",
+            idade: 12,
+            tipoPet: "pássaro"
+        }, {
+            nome: "Doguinho Z",
+            idade: 16,
+            tipoPet: "cachorro"
+        }, {
+            nome: "Doguinho H",
+            idade: 4,
+            tipoPet: "cachorro"
+        }, {
+            nome: "Gatinho P",
+            idade: 3,
+            tipoPet: "gato"
+        }];
+
+
+
+        //filter - usado para filtar um item de um objeto
+        //reduce - fazer soma de valores, estoque, qtd produtos vendidos, pets
+        //map - mapeia os dados 
+
+
+        //1 - Lista somente os animais cujo tipo seja igual a gato
+        console.log('Resolução exemplo 1');
+
+        let gatos = pets.filter(pet => {
+
+            return pet.tipoPet === 'gato'
+
+        })
+        console.log(gatos);
+
+
+        //2 - Lista somente os animais cuja idade seja maior que 3
+        console.log('Resolução exemplo 2');
+
+        let animaisMaior3 = pets.filter(pet => {
+
+            return pet.idade > 3;
+
+        })
+        console.log(animaisMaior3);
+  
+
+        //3 - Lista somente os gatos cuja idade seja maior que 7   
+        console.log('Resolução exemplo 3');
+
+        let gatosMaior7 = pets.filter(pet => {
+
+            return pet.idade > 7 && pet.tipoPet === 'gato';
+
+        })
+        console.log(gatosMaior7);
+
+
+        //4 - Some a idade de todos os pets
+        console.log('Resolução exemplo 4');
+
+        let totalIdadePets = pets.reduce((soma, cadaPetNaLista) => {
+
+            return soma + parseInt(cadaPetNaLista.idade);
+
+        }, 0)
+        console.log(totalIdadePets);
+
+
+        //5 - Traga somente os nome dos pet
+        console.log('Resolução exemplo 5');
+
+        let nomePets = pets.map(pet => pet.nome);
+
+        console.log(nomePets);
+
+
+        //6 - Traga a idade humana dos pets * 7
+        console.log('Resolução exemplo 6');
+
+        let idadeHumanaPets = pets.map(function(pet){
+
+            return parseInt(pet.idade) * 7;
+        });
+
+        console.log(idadeHumanaPets);
+
+
+        //7 - Mostre a quantidade de cachorros na lista 
+        console.log('Resolução ex 7');
+
+        let qtdCachorros = pets.filter(pet => {
+            
+            return pet.tipoPet === 'cachorro'
+
+        });
+
+        console.log(qtdCachorros.length);
+
+
+        //8 - Traga somente o nome e o tipo do pet 
+        console.log('Resolução ex 8');
+
+        let nomeTipoPets = pets.map(pet => {
+
+            return {
+                
+                nome : pet.nome,
+                tipoPet: pet.tipoPet
+            }
+        }); 
+
+        console.log(nomeTipoPets);
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>
